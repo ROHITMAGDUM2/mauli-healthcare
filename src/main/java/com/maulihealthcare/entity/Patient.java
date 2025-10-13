@@ -1,18 +1,28 @@
 package com.maulihealthcare.entity;
 
-import org.springframework.boot.autoconfigure.security.saml2.Saml2RelyingPartyAutoConfiguration;
+import jakarta.persistence.*;
+import lombok.Data;
 
+@Entity
+@Table(name  = "patients")
+@Data
 public class Patient {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String name;
 
+    @Column(unique = true, nullable = false)
     private String email;
 
+    @Column(unique = true)
     private String phone;
 
     private String address;
 
+    @Column(nullable = false)
     private String password;
 
     private String role ="PATIENT";
