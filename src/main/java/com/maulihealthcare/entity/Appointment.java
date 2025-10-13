@@ -22,7 +22,6 @@ public class Appointment {
     @JoinColumn(name = "patient_id", nullable = false)
     private Patient patient;
 
-
     private LocalDate date;
     private LocalTime time;
     private String status= "SCHEDULED"; // SCHEDULED, COMPLETED, CANCELLED
