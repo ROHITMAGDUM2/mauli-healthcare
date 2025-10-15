@@ -19,6 +19,9 @@ public class Doctor {
     @Column(unique = true)
     private String phone;
 
+    @Column(unique = true, nullable = false)  // ✅ EMAIL FIELD REQUIRED
+    private String email;
+
     @Column(nullable = false)
     private String password;
 
